@@ -1,0 +1,160 @@
+/* Fonte e reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Container principal */
+#content {
+  max-width: 750px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+#content h2 {
+  text-align: center;
+  color: #1F4F9C;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Labels */
+#content label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 12px;
+}
+
+/* Inputs e Textareas */
+#content input[type="text"],
+#content input[type="tel"],
+#content input[type="email"],
+#content input[type="number"],
+#content textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 3px;
+  border: 1px solid #DDDDDB;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+#content input:focus,
+#content textarea:focus {
+  border-color: #1F4F9C;
+  box-shadow: 0 0 5px rgba(31,79,156,0.2);
+  outline: none;
+}
+
+/* Mensagens de erro */
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+/* Campos válidos e inválidos */
+input.valid, textarea.valid {
+  border-color: #2ecc71;
+}
+
+input.invalid, textarea.invalid {
+  border-color: #e74c3c;
+}
+
+/* Botões */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn input[type="submit"],
+.btn input[type="button"] {
+  width: 90%;
+  max-width: 350px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1F4F9C;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Efeito hover */
+.btn input[type="submit"]:hover,
+.btn input[type="button"]:hover {
+  background-color: #93BAF5;
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .btn input[type="submit"],
+  .btn input[type="button"] {
+    width: 95%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn input[type="submit"],
+  .btn input[type="button"] {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+/* Mensagem de sucesso */
+#msg-sucesso {
+  display: none;
+  color: #2ecc71;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Layout compacto: dois campos por linha */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  #content {
+    padding: 20px;
+    margin: 20px;
+  }
+}

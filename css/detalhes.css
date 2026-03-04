@@ -1,0 +1,303 @@
+/* ==========================
+   ESTILO GERAL
+========================== */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+}
+
+/* ==========================
+   NAVBAR FIXA (CORRIGIDA)
+========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(221, 221, 219);
+  height: 70px; /* altura igual à da outra tela */
+  padding: 10px 60px;
+  border-radius: 0;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.voltar-container {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.voltar {
+  background-color: rgb(31, 79, 156);
+  padding: 9px 25px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.4s;
+  box-shadow: 0 1px 10px rgb(187, 187, 185);
+}
+
+.voltar:hover {
+  background-color: black;
+}
+
+
+
+
+/* Logo centralizada perfeitamente */
+.logo {
+   width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ==========================
+   CONTEÚDO PRINCIPAL
+========================== */
+.container-detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 50px;
+  margin: 140px 30px 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #f5f5f5, #ececec);
+  border: 1px solid rgba(31, 79, 156, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(31, 79, 156, 0.08);
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f4f9c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-detalhes:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(31, 79, 156, 0.1);
+}
+
+.container-detalhes .card {
+  flex: 1 1 300px;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(31, 79, 156, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-detalhes .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(31, 79, 156, 0.08);
+}
+
+/* ==========================
+   GALERIA DE IMAGENS
+========================== */
+.galeria {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbs img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbs img:hover {
+  border-color: rgb(31, 79, 156);
+}
+
+/* Imagem principal com moldura e proporção fixa */
+.imagem-principal img {
+  width: 500px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f0f0f0;
+}
+
+/* ==========================
+   INFORMAÇÕES
+========================== */
+.info-veiculo {
+  flex: 1;
+  min-width: 350px;
+  padding: 0 10px;
+}
+
+.info-veiculo h2 {
+  color: #1F4F9C;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  position: relative;
+}
+
+.info-veiculo h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1F4F9C 0%, #93BAF5 100%);
+  border-radius: 2px;
+}
+
+.info-bloco {
+  background: linear-gradient(135deg, #f9fafb 0%, #e8ecf1 100%);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(31, 79, 156, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.info-bloco:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.info-bloco h4 {
+  color: #1F4F9C;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.info-bloco h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 20px;
+  background: linear-gradient(135deg, #1F4F9C 0%, #93BAF5 100%);
+  border-radius: 3px;
+}
+
+.info-bloco p {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  font-weight: 400;
+}
+
+/* ==========================
+   BOTÃO WHATSAPP
+========================== */
+.btn-whatsapp {
+  display: inline-block;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-whatsapp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover::before {
+  left: 100%;
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+footer {
+  background-color: rgb(31, 79, 156);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 40px;
+  width: 100%;
+}
+
+footer .footer-logo-bg {
+  display: inline-block;
+  background-color: rgb(221, 221, 219);
+   padding: 15px 25px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+@media (max-width: 768px) {
+  .container-detalhes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagem-principal img {
+    width: 100%;
+    height: auto;
+  }
+
+  .voltar {
+    left: 20px;
+    padding: 8px 18px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+}

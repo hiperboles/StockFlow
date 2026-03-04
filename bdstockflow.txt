@@ -1,0 +1,129 @@
+CREATE DATABASE bdstockflow;
+USE bdstockflow;
+
+-- ================================
+-- 🏢 EMPRESAS
+-- ================================
+CREATE TABLE empresa (
+    id_empresa INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(18) UNIQUE NOT NULL,
+    nome_fantasia VARCHAR(50) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    endereco VARCHAR(50) NOT NULL,
+    cidade VARCHAR(50) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(50) NOT NULL
+) ENGINE=InnoDB;
+
+-- ================================
+-- 👨‍💼 FUNCIONÁRIOS
+-- ================================
+CREATE TABLE funcionario (
+    id_funcionario INT PRIMARY KEY AUTO_INCREMENT,
+    tipo_usuario INT NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    cod_empresa INT,
+    FOREIGN KEY (cod_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ================================
+-- 🚗 VEÍCULOS
+-- ================================
+CREATE TABLE veiculo (
+    id_veiculo INT PRIMARY KEY AUTO_INCREMENT,
+    placa VARCHAR(8) NOT NULL unique,
+    cor VARCHAR(15),
+    fabricante VARCHAR(20),
+    carroceria VARCHAR(15),
+    statusveiculo VARCHAR(15),
+    modelo VARCHAR(50),
+    tipo VARCHAR(50),
+    valor VARCHAR(20),
+    ano INT,
+    custos_extra VARCHAR(20),
+    cod_empresa INT,
+    data_venda DATE NULL,
+    data_compra DATE NULL,
+    combustivel VARCHAR(20),
+    quilometragem INT,
+    valor_compra VARCHAR(20),
+    FOREIGN KEY (cod_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ================================
+-- 💰 VENDAS
+-- ================================
+CREATE TABLE venda (
+    id_venda INT PRIMARY KEY AUTO_INCREMENT,
+    cod_empresa INT NOT NULL,
+    cod_veiculo INT NOT NULL,
+    dataVenda date NOT NULL,
+    vendedor VARCHAR(100) NOT NULL,
+    comprador VARCHAR(100) NOT NULL,
+    cpf_comprador VARCHAR(14) NOT NULL,
+    telefone_comprador VARCHAR(15),
+    cep VARCHAR(9),
+    cidade VARCHAR(100),
+    endereco VARCHAR(150),
+    numero VARCHAR(10),
+    bairro VARCHAR(100),
+    estado VARCHAR(2),
+    email_cli VARCHAR(100),
+    fabricante VARCHAR(50) NOT NULL,
+    modelo VARCHAR(50) NOT NULL,
+    ano INT NOT NULL,
+    placa VARCHAR(8) NOT NULL,
+    valor DECIMAL(12,2) NOT NULL,
+    valorEntrada DECIMAL(12,2) NOT NULL,
+    valorFaltante DECIMAL(12,2) NOT NULL,
+    observacoes TEXT,
+    data_final DATE NULL,
+    custos DECIMAL(12,2),
+    FOREIGN KEY (cod_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE,
+    FOREIGN KEY (placa) REFERENCES veiculo(placa) ON DELETE CASCADE,
+	 FOREIGN KEY (cod_veiculo) REFERENCES veiculo(id_veiculo) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ================================
+-- 🖼️ IMAGENS DE VEÍCULOS
+-- ================================
+CREATE TABLE imagem_veiculo (
+    id_imagem INT PRIMARY KEY AUTO_INCREMENT,
+    cod_veiculo INT NOT NULL,
+    caminho_imagem VARCHAR(255) NOT NULL,
+    FOREIGN KEY (cod_veiculo) REFERENCES veiculo(id_veiculo) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ================================
+-- 🔑 REDEFINIÇÃO DE SENHA
+-- ================================
+CREATE TABLE password_resets (
+    id_reset INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(50) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expires_at DATEtime NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX(email),
+    FOREIGN KEY (email) REFERENCES empresa(email) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- ================================
+-- 🧾 CUSTOS E GARANTIAS
+-- ================================
+CREATE TABLE custos_garantia (
+    id_custos_garantia INT PRIMARY KEY AUTO_INCREMENT,
+    cod_veiculo INT NOT NULL,
+    data_custo DATE NULL,
+    custos DECIMAL(12,2) DEFAULT 0.00,
+    quantidade INT,
+    descricao_custo TEXT,
+    FOREIGN KEY (cod_veiculo) REFERENCES veiculo(id_veiculo) ON DELETE CASCADE
+) ENGINE=InnoDB;

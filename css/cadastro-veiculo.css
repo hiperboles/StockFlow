@@ -1,0 +1,21 @@
+/* Faz os campos ocuparem mais espaço dentro das colunas */
+.form-control,
+.form-select {
+  width: 100%;
+  max-width: 100%;
+  flex: 1;
+  font-size: 1rem;
+  padding: 0.6rem 0.9rem;
+}
+
+/* Garante espaçamento consistente entre os campos */
+.form-row > [class*="col-"] {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Dá um leve respiro vertical */
+.form-row {
+  margin-bottom: 1rem;
+}
+

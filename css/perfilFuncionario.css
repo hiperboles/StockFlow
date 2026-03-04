@@ -1,0 +1,290 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Container centralizado com fundo suave */
+  .container {
+    min-height: 100vh;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Caixa branca do formulário */
+  .formulario {
+    background-color: #fff;
+    width: 900px;
+    max-width: 100%;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.18);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  /* Título do formulário */
+  .formulario h2.title {
+    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #1F4F9C;
+  }
+  
+  /* Formulário com duas colunas lado a lado */
+  form#Perfil {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Cada coluna do formulário */
+  .formss {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 40%;
+    min-width: 280px;
+  }
+  
+  /* Labels alinhados e espaçados */
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F4F9C;
+  }
+  
+  /* Inputs estilizados */
+  input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    background-color: #a5a5a325;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #1F4F9C;
+    background-color: rgba(70, 131, 230, 0.12);
+  }
+  
+  /* Input readonly mais claro */
+  input[readonly] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    color: #555;
+  }
+  
+  /* Botão atualizar */
+  #btnAtualizar {
+    background-color: #1F4F9C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-self: center;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  #btnAtualizar:hover {
+    background-color: #154a7c;
+  }
+  
+  #btnAtualizar:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px #154a7c;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .formulario {
+      padding: 30px 20px;
+      width: 95%;
+    }
+    
+    form#Perfil {
+      flex-direction: column;
+    }
+    
+    .formss {
+      flex: 1 1 100%;
+      min-width: auto;
+    }
+    
+    #btnAtualizar {
+      max-width: 100%;
+    }
+  }
+
+  /* 🎨 Paleta de cores usada:
+   - Azul principal: #1F4F9C
+   - Azul claro hover: #93BAF5
+   - Cinza claro: #DDDDDB
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-family: Roboto;
+}
+
+body {
+  background: linear-gradient(#DDDDDB, #d1d1cd, #d1d1d0);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+.sumir{
+  opacity: 0;
+  position: absolute;
+}
+
+/* ==== SIDEBAR ==== */
+aside {
+  width: 200px; /* valor intermediário */
+  min-height: 100vh;
+  position: fixed;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: linear-gradient(#e5e5e0, #e8e8e2d5, #e8e8e4cb);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar.collapsed {
+  width: 85px;
+}
+
+.sidebar.collapsed .text,
+.sidebar.collapsed .perfil {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.collapsed .ul-obj {
+  margin-left: 10%;
+  width: 60px;
+  margin: 5px 0;
+}
+
+.sidebar.collapsed .back {
+  margin-left: 0;
+  transform: rotate(180deg);
+}
+
+/* ==== PERFIL ==== */
+.profile {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  padding: 15px;
+}
+
+/* ==== HEADER ==== */
+header {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .back {
+  margin-left: auto;
+}
+
+/* ==== LINKS ==== */
+a {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #1F4F9C;
+}
+
+a:hover {
+  color: white;
+  background-color: #1F4F9C;
+  border-radius: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+/* ==== BOTÃO BACK ==== */
+.back {
+  width: 65px;
+  height: 35px;
+  border: 2px solid rgba(31, 79, 156, 0.3);
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  font-weight: bold;
+  background: linear-gradient(#e5e5e0, #e8e8e2d5, #e8e8e4cb);
+}
+
+.back:focus {
+  outline: none;
+}
+
+.back:hover {
+  cursor: pointer;
+  background: #93BAF5;
+  color: white;
+}
+
+/* ==== LISTAS ==== */
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  list-style: none;
+  min-height: 80vh;
+  padding: 10px;
+}
+
+li {
+  display: flex;
+  width: 100%;
+}
+
+.ul-obj {
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  width: 90%;
+}
+
+.ul-obj:hover {
+  color: white;
+  background-color: #1F4F9C;
+}

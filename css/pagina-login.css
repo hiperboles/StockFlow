@@ -1,0 +1,245 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+  background-color: #fff;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 110px;
+}
+
+.buttons {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  
+}
+
+.links {
+  color: #1f4f9c;
+  text-decoration: none;
+}
+
+.links:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.login {
+  background-color: #1f4f9c;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.login:hover {
+  background-color: #0ccfbf;
+  color: white;
+  text-decoration: none;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #dddddb;
+  padding-top: 100px; /* espaço para a navbar */
+}
+
+.container {
+  background: #f6f6f5;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(31, 79, 156, 0.2);
+}
+
+/* ======== TÍTULO ======== */
+h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+span {
+  color: #1f4f9c;
+}
+
+/* ======== IMAGEM LOGO ======== */
+img {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* ======== INPUTS ======== */
+.input-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+input.log {
+  width: 100%;
+  border: 1px solid #1f4f9c;
+  background: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input.log:focus {
+  background-color: #eaf1ff;
+  border-color: #1f4f9c;
+  box-shadow: 0 0 6px rgba(31, 79, 156, 0.3);
+}
+
+/* ======== BOTÃO MOSTRAR SENHA ======== */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #1f4f9c;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.toggle-password:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+
+/* Responsivo para celular */
+@media (max-width: 480px) {
+  .toggle-password {
+    font-size: 14px;
+    right: 8px;
+  }
+}
+
+
+/* ======== BOTÃO LOGIN ======== */
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #1f4f9c;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(31, 79, 156, 0.3);
+}
+
+.button:hover {
+  background-color: #000;
+  transform: scale(1.02);
+}
+
+/* ======== LINKS ======== */
+p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+p a.links {
+  color: #1f4f9c;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+p a.links:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ======== RADIO BUTTONS PERSONALIZADOS ======== */
+.div-form-checks {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-check {
+  width: 50%;
+}
+
+.form-check-input {
+  display: none;
+}
+
+.form-check-label {
+  display: inline-block;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
+  transition: all 0.3s ease;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.form-check-label:hover {
+  border-color: #1f4f9c;
+  color: #1f4f9c;
+  background: #f0f5ff;
+}
+
+.form-check-input:checked + .form-check-label {
+  border-color: #1f4f9c;
+  background: #1f4f9c;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(31, 79, 156, 0.3);
+}

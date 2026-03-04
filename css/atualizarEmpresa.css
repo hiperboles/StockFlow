@@ -1,0 +1,103 @@
+/* Geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Título */
+h3 {
+    text-align: center;
+    color: #1f4f9c;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+form .btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+form .btn-success {
+    background-color: #1f4f9c;
+    color: #fff;
+}
+
+form .btn-success:hover {
+    background-color: #163c7a;
+}
+
+form .btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+form .btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+table thead {
+    background-color: #1f4f9c;
+    color: #fff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 15px 10px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f1f3f6;
+}
+
+table tbody tr:hover {
+    background-color: #dbe5f7;
+    transition: background 0.3s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table th, table td {
+        padding: 12px 8px;
+    }
+}
