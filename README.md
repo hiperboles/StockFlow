@@ -13,3 +13,6 @@ Ferramenta de gestão de veículos feito com o foco no aprendizado e estudo.
 * Visualização de veículos vendidos
 * Visualização de veículos disponíveis e indisponíveis
 * Troca de senha
+* Exclusão de funcionários
+* Visualização de garantia
+* Página inicial com veículos categorizados por marca
